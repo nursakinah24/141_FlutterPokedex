@@ -19,50 +19,6 @@ class PokedexApp extends StatelessWidget {
   }
 }
 
-/* class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Center(
-        child: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-/*             Column(
-              children: [
-                Image.network(
-                    'https://www.freepnglogos.com/uploads/pokemon-logo-png-0.png'),
-                Container(
-                  width: 10,
-                )
-              ],
-            ), */
-            RichText(
-              text: TextSpan(
-                text: 'Pokedex.',
-                style: const TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(236, 243, 192, 26)
-                )
-              ),
-            ),
-            Text('Welcome to Pokedex \nYou Can find your favorite pokemon here',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.grey
-            ),
-            ),
-          ],
-        ),
-      ),
-    ),
-    );
-  }
-} */
-
 /* 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
