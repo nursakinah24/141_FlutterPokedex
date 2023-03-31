@@ -22,11 +22,20 @@ class _LoginPageState extends State<LoginPage> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-           // margin: EdgeInsets.only(top: 20),
             child:   
             Image.network(
               'https://www.freepnglogos.com/uploads/pokemon-logo-png-0.png'),
           ),
+           Container(
+                margin: EdgeInsets.only(top: 20),
+                alignment: Alignment.topCenter,
+                child: RichText(
+                    text: TextSpan(
+                        text: "Let's Get Started",
+                        style: const TextStyle(
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(236, 243, 192, 26))))),
         ],
       ),
     ));
