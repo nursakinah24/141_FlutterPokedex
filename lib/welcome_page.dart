@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_pokedex/login_page.dart';
 
-class WelcomePage extends StatefulWidget {
+class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
-  @override
-  State<WelcomePage> createState() => _WelcomePageState();
-}
-
-class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,13 +27,13 @@ class _WelcomePageState extends State<WelcomePage> {
               margin: EdgeInsets.only(top: 30),
               alignment: Alignment.topCenter,
               child: Text(
-                'Welcome to Pokedex \nYou Can find your favorite pokemon here',
+                'Welcome to Pokedex \nYou can find your favorite pokemon here',
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.grey),
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 90),
+              margin: EdgeInsets.only(top: 80),
               alignment: Alignment.topCenter,
               child: Image.network(
                   'https://cutewallpaper.org/24/pokeballs-png/pokeball-png-photo-image-png-play.png'),
@@ -45,10 +41,17 @@ class _WelcomePageState extends State<WelcomePage> {
               height: 200,
             ),
             Container(
-              height: 70,
+              height: 80,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LoginPage(),
+                  ),
+                );
+              },
               child: Icon(Icons.arrow_right_alt_sharp),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color.fromARGB(236, 243, 192, 26),
