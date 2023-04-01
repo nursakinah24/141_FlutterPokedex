@@ -10,11 +10,12 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   final _formKey = GlobalKey<FormState>();
 
-  String? name = '';
-  String? email = '';
-  String? password = '';
-  String? confirmPassword = '';
-  bool _obscureText = true;
+  String? name;
+  String? email;
+  String? password;
+  String? confirmPassword;
+  bool _obscureText1 = true;
+  bool _obscureText2 = true;
 
   @override
   Widget build(BuildContext context) {
@@ -151,7 +152,7 @@ class _RegisterPageState extends State<RegisterPage> {
               Container(
                 padding: EdgeInsets.only(left: 15, right: 20),
                 child: TextFormField(
-                  obscureText: _obscureText,
+                  obscureText: _obscureText1,
                   decoration: InputDecoration(
                     hintText: 'Enter your password',
                     //border: OutlineInputBorder(),
@@ -161,11 +162,11 @@ class _RegisterPageState extends State<RegisterPage> {
                     prefixIcon: Icon(Icons.lock, size: 30, color: Colors.blue),
                     suffixIcon: IconButton(
                       icon: Icon(
-                        _obscureText ? Icons.visibility : Icons.visibility_off,
+                        _obscureText1 ? Icons.visibility : Icons.visibility_off,
                       ),
                       onPressed: () {
                         setState(() {
-                          _obscureText = !_obscureText;
+                          _obscureText1 = !_obscureText1;
                         });
                       },
                     ),
@@ -196,7 +197,7 @@ class _RegisterPageState extends State<RegisterPage> {
               Container(
                 padding: EdgeInsets.only(left: 15, right: 20, bottom: 20),
                 child: TextFormField(
-                  obscureText: _obscureText,
+                  obscureText: _obscureText2,
                   decoration: InputDecoration(
                     hintText: 'Enter your password',
                     //border: OutlineInputBorder(),
@@ -206,11 +207,11 @@ class _RegisterPageState extends State<RegisterPage> {
                     prefixIcon: Icon(Icons.lock, size: 30, color: Colors.blue),
                     suffixIcon: IconButton(
                       icon: Icon(
-                        _obscureText ? Icons.visibility : Icons.visibility_off,
+                        _obscureText2 ? Icons.visibility : Icons.visibility_off,
                       ),
                       onPressed: () {
                         setState(() {
-                          _obscureText = !_obscureText;
+                          _obscureText2 = !_obscureText2;
                         });
                       },
                     ),
@@ -241,12 +242,12 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
+                        _formKey.currentState!.save();
                         Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => HomePage(
                               name: name,
-                              password: password,
                             ),
                           ),
                         );
@@ -257,34 +258,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       'Register',
                     ),
                   )),
-              /* TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  hintText: 'Confirm Password',
-                  icon: Icon(Icons.lock),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please confirm your password';
-                  }
-                  if (value != password) {
-                    return 'Passwords do not match';
-                  }
-                  return null;
-                },
-                onSaved: (value) {
-                  confirmPassword = value;
-                },
-              ), */
-              /*  ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    _formKey.currentState!.save();
-                    // TODO: Do register process here
-                  }
-                },
-                child: Text('Register'),
-              ), */
             ],
           ),
         ),

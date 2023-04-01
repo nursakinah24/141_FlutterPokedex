@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                             if (value == null || value.isEmpty) {
                               return 'Nama Tidak Boleh Kosong';
                             }
-                            if (!value!.contains('Kina')) {
+                            if (!value!.contains(value)) {
                               return 'Please enter a valid name!';
                             }
                             return null;
@@ -138,6 +138,8 @@ class _LoginPageState extends State<LoginPage> {
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter your password';
+                            } else if (value.length < 6) {
+                              return 'Password must be at least 6 characters';
                             }
                             return null;
                           },
@@ -159,16 +161,20 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             onPressed: () {
                               if (_formkey.currentState!.validate()) {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => HomePage(
-                                      name: name,
-                                      password: password,
+                                _formkey.currentState!.save();
+                                if (name == 'kina' && password == '123456') {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => HomePage(
+                                        name: name,
+                                      ),
                                     ),
-                                  ),
-                                );
-                                setState(() {});
+                                  );
+                                  setState(() {});
+                                } /* else {
+                                  Scaffold.of(context).showSnackBar(SnackBar(content: Text('Incorrect email or password')));
+                                } */
                               }
                             },
                             child: const Text(
