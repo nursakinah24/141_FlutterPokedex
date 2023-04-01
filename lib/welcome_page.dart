@@ -17,7 +17,7 @@ class WelcomePage extends StatelessWidget {
                 margin: EdgeInsets.only(top: 80),
                 alignment: Alignment.topCenter,
                 child: RichText(
-                    text: TextSpan(
+                    text: const TextSpan(
                         text: 'Pokedex.',
                         style: const TextStyle(
                             fontSize: 40,
@@ -26,7 +26,7 @@ class WelcomePage extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(top: 30),
               alignment: Alignment.topCenter,
-              child: Text(
+              child: const Text(
                 'Welcome to Pokedex \nYou can find your favorite pokemon here',
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.grey),
