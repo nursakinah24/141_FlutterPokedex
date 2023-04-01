@@ -22,20 +22,30 @@ class _LoginPageState extends State<LoginPage> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            child:   
-            Image.network(
-              'https://www.freepnglogos.com/uploads/pokemon-logo-png-0.png'),
+            margin: EdgeInsets.only(top: 30),
+            child: Image.network(
+                'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png',
+                width: 400, height: 200),
           ),
-           Container(
-                margin: EdgeInsets.only(top: 20),
-                alignment: Alignment.topCenter,
-                child: RichText(
-                    text: TextSpan(
-                        text: "Let's Get Started",
-                        style: const TextStyle(
-                            fontSize: 40,
-                            fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(236, 243, 192, 26))))),
+          Container(
+             // margin: EdgeInsets.only(top: 20),
+              //alignment: Alignment.topCenter,
+              child: RichText(
+                  text: TextSpan(
+                      text: "Let's Get Started",
+                      style: const TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(236, 243, 192, 26))))),
+          Container(
+            margin: EdgeInsets.only(top: 30),
+            alignment: Alignment.topCenter,
+            child: Text(
+              'There is No Sense In Going Out of \n Your Way to Get Somebody to Like You.',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.grey),
+            ),
+          ),
         ],
       ),
     ));
