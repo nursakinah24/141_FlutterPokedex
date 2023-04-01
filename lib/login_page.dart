@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_pokedex/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -19,10 +20,10 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-          key: _formkey,
+      key: _formkey,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget> [
+        children: <Widget>[
           Container(
             margin: EdgeInsets.only(top: 30),
             child: Image.network(
@@ -55,7 +56,10 @@ class _LoginPageState extends State<LoginPage> {
             child: const Text(
               'Name',
               textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 17, color: Colors.blue, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 17,
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold),
             ),
           ),
           Container(
@@ -65,19 +69,18 @@ class _LoginPageState extends State<LoginPage> {
             padding: EdgeInsets.only(left: 15, right: 20),
             child: TextFormField(
               decoration: const InputDecoration(
-                // labelText: 'Name',
-                hintText: 'Enter your name',
-                //border: OutlineInputBorder(),
-                contentPadding:
-                    EdgeInsets.all(20.0),
-                prefixIcon: Icon(Icons.person, size: 30, color: Colors.blue),
-                enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.blue))
-              ),
+                  // labelText: 'Name',
+                  hintText: 'Enter your name',
+                  //border: OutlineInputBorder(),
+                  contentPadding: EdgeInsets.all(20.0),
+                  prefixIcon: Icon(Icons.person, size: 30, color: Colors.blue),
+                  enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.blue))),
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Nama Tidak Boleh Kosong';
                 }
-                if (!isValidName(value)){
+                if (!value!.contains('Kina')) {
                   return 'Please enter a valid name!';
                 }
                 return null;
@@ -87,56 +90,81 @@ class _LoginPageState extends State<LoginPage> {
               },
             ),
           ),
-           Container(
+          Container(
             margin: EdgeInsets.only(top: 25, left: 18),
             alignment: Alignment.topLeft,
             child: const Text(
               'Password',
               textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 17, color: Colors.blue, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 17,
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold),
             ),
           ),
-            Container(
-            padding: EdgeInsets.only(left: 15, right: 20),
+          Container(
+            padding: EdgeInsets.only(left: 15, right: 20, bottom: 50),
             child: TextFormField(
               obscureText: _obscureText,
-              decoration:  InputDecoration(
+              decoration: InputDecoration(
                 hintText: 'Enter your password',
                 //border: OutlineInputBorder(),
-                contentPadding:
-                    EdgeInsets.all(20.0),
-                       enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
+                contentPadding: EdgeInsets.all(20.0),
+                enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blue)),
                 prefixIcon: Icon(Icons.lock, size: 30, color: Colors.blue),
-                suffixIcon: IconButton(icon: Icon(_obscureText ? Icons.visibility : Icons.visibility_off,),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                    _obscureText ? Icons.visibility : Icons.visibility_off,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _obscureText = !_obscureText;
+                    });
+                  },
+                ),
+              ),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your password';
+                }
+                return null;
+              },
+              onSaved: (value) {
+                password = value;
+              },
+            ),
+          ),
+          ConstrainedBox(
+              constraints:
+                  const BoxConstraints.tightFor(width: 300, height: 50),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromARGB(236, 243, 192, 26),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50)),
+                  //padding: EdgeInsets.all(24),
+                ),
                 onPressed: () {
-                  setState(() {
-                    _obscureText = !_obscureText;
-                  });
-                },
-              ),
-              ),
-                 validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your password';
+                  if (_formkey.currentState!.validate()) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomePage(
+                          name: name,
+                          password: password,
+                        ),
+                      ),
+                    );
+                    setState(() {});
                   }
-                  return null;
                 },
-                onSaved: (value) {
-                  password = value;
-                },
-              ),
-            )
-            
+                child: const Text(
+                  'Sign In',
+                ),
+              ))
         ],
       ),
-    )
-    );
-  }
-
-  bool isValidName(String name){
-    return true;
-  }
-
-  void login(String email, String password) {
+    ));
   }
 }
