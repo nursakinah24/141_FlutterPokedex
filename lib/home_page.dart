@@ -17,8 +17,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+    //  resizeToAvoidBottomInset: false,
+      body: SingleChildScrollView( child: Column(
+       // mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Row(mainAxisAlignment: MainAxisAlignment.start, children: [
             Container(
@@ -95,6 +96,7 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
               child: Column(
             children: <Widget>[
               SizedBox(
@@ -104,8 +106,8 @@ class _HomePageState extends State<HomePage> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
+                    child: Wrap(
+                     // crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
                           margin: EdgeInsets.only(top: 20, left: 30),
@@ -371,13 +373,196 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ],
-                    ), 
-                 
+                    ),        
                   )),
+                  SizedBox(
+                  height: 170,
+                  child: Card(
+                    elevation: 4,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(top: 20, left: 30),
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.green,
+                          ),
+                          child: Image.network(
+                            'https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png',
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 20, left: 20),
+                          alignment: Alignment.topLeft,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  const Text('#004',
+                                      style: TextStyle(color: Colors.grey)),
+                                  Container(width: 10),
+                                  Text('Charmander',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold))
+                                ],
+                              ),
+                              SizedBox.fromSize(size: Size(5, 5),),
+                              Row(
+                                children: [
+                                  Container(
+                                      width: 50, // set width to 200 pixels
+                                      height: 20,
+                                      decoration: BoxDecoration(
+                                          color: Colors.green,
+                                          borderRadius:
+                                              BorderRadius.circular(5)),
+                                      child: Align(
+                                        child: const Text('Fire',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold)),
+                                      ) // set height to 100 pixels
+                                      ),
+                                  Container(width: 5),
+                                  Container(
+                                      margin: EdgeInsets.only(left: 5),
+                                      alignment: Alignment.topLeft,
+                                      width: 50, // set width to 200 pixels
+                                      height: 20,
+                                      decoration: BoxDecoration(
+                                          color: Colors.purple,
+                                          borderRadius:
+                                              BorderRadius.circular(5)),
+                                      child: Align(
+                                        child: const Text('',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold)),
+                                      )),
+                                ],
+                              ),
+                              SizedBox.fromSize(size: Size(5, 5),),
+                              Row(
+                                children: [
+                                  const Text(
+                                      "The flame that burns at the tip of its tail\nis an indication of its emotions. The\nflame wavers when Charmander is\nenjoying itself. If the Pokémon becomes\nenraged, the flame burns fiercely.",
+                                      style: TextStyle(
+                                        fontSize: 11,
+                                        color: Colors.grey,
+                                      ))
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),        
+                  )),
+            /*                         SizedBox(
+                  height: 170,
+                  child: Card(
+                    elevation: 4,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(top: 20, left: 30),
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.green,
+                          ),
+                          child: Image.network(
+                            'https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png',
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 20, left: 20),
+                          alignment: Alignment.topLeft,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  const Text('#003',
+                                      style: TextStyle(color: Colors.grey)),
+                                  Container(width: 10),
+                                  Text('Venusaur',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold))
+                                ],
+                              ),
+                              SizedBox.fromSize(size: Size(5, 5),),
+                              Row(
+                                children: [
+                                  Container(
+                                      width: 50, // set width to 200 pixels
+                                      height: 20,
+                                      decoration: BoxDecoration(
+                                          color: Colors.green,
+                                          borderRadius:
+                                              BorderRadius.circular(5)),
+                                      child: Align(
+                                        child: const Text('Grass',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold)),
+                                      ) // set height to 100 pixels
+                                      ),
+                                  Container(width: 5),
+                                  Container(
+                                      margin: EdgeInsets.only(left: 5),
+                                      alignment: Alignment.topLeft,
+                                      width: 50, // set width to 200 pixels
+                                      height: 20,
+                                      decoration: BoxDecoration(
+                                          color: Colors.purple,
+                                          borderRadius:
+                                              BorderRadius.circular(5)),
+                                      child: Align(
+                                        child: const Text('Poison',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold)),
+                                      )),
+                                ],
+                              ),
+                              SizedBox.fromSize(size: Size(5, 5),),
+                              Row(
+                                children: [
+                                  const Text(
+                                      "There is a large flower on Venusaur's\nback. The flower is saidto take on vivid\ncolors if it gets plenty of nutrition and\nsunlight. The flower's aroma soothes\nthe emotions of people.",
+                                      style: TextStyle(
+                                        fontSize: 11,
+                                        color: Colors.grey,
+                                      ))
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),        
+                  )), */
             ],
           ))
         ],
       ),
-    );
+    ));
   }
 }
