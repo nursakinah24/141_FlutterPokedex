@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
             children: <Widget>[
               SizedBox(
-                  height: 150,
+                  height: 170,
                   child: Card(
                     elevation: 4,
                     shape: RoundedRectangleBorder(
@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                                           fontWeight: FontWeight.bold))
                                 ],
                               ),
-                              SizedBox.fromSize(),
+                              SizedBox.fromSize(size: Size(5, 5),),
                               Row(
                                 children: [
                                   Container(
@@ -172,6 +172,7 @@ class _HomePageState extends State<HomePage> {
                                       )),
                                 ],
                               ),
+                              SizedBox.fromSize(size: Size(5, 5),),
                               Row(
                                 children: [
                                   const Text(
@@ -186,156 +187,102 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ],
-                    ), /* 
-             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  margin: EdgeInsets.only(top: 20),
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    color: Colors.blue,
-                  ),
-                  child: Image.network(
-                    'https://www.pngall.com/wp-content/uploads/13/Pokemon-Logo-PNG-Pic.png',
-                  ),
-                ),
-                Container(
-                    margin: EdgeInsets.only(top: 20, left: 20),
-                    alignment: Alignment.topLeft,
-                    child: RichText(
-                        text: TextSpan(
-                      text: 'Hello, ',
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: '${widget.name}',
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.blue),
+                    ), 
+                 
+                  )),
+                    SizedBox(
+                  height: 170,
+                  child: Card(
+                    elevation: 4,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(top: 20, left: 30),
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.green,
+                          ),
+                          child: Image.network(
+                            'https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png',
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 20, left: 20),
+                          alignment: Alignment.topLeft,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  const Text('#002',
+                                      style: TextStyle(color: Colors.grey)),
+                                  Container(width: 10),
+                                  Text('Ivysaur',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold))
+                                ],
+                              ),
+                              SizedBox.fromSize(size: Size(5, 5),),
+                              Row(
+                                children: [
+                                  Container(
+                                      width: 50, // set width to 200 pixels
+                                      height: 20,
+                                      decoration: BoxDecoration(
+                                          color: Colors.green,
+                                          borderRadius:
+                                              BorderRadius.circular(5)),
+                                      child: Align(
+                                        child: const Text('Grass',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold)),
+                                      ) // set height to 100 pixels
+                                      ),
+                                  Container(width: 5),
+                                  Container(
+                                      margin: EdgeInsets.only(left: 5),
+                                      alignment: Alignment.topLeft,
+                                      width: 50, // set width to 200 pixels
+                                      height: 20,
+                                      decoration: BoxDecoration(
+                                          color: Colors.purple,
+                                          borderRadius:
+                                              BorderRadius.circular(5)),
+                                      child: Align(
+                                        child: const Text('Poison',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold)),
+                                      )),
+                                ],
+                              ),
+                              SizedBox.fromSize(size: Size(5, 5),),
+                              Row(
+                                children: [
+                                  const Text(
+                                      "There is a bud on this Pokémon's back.\nTo support its weight, Ivysaur's legs and\ntrunk grow thick and strong. If it starts\nspending more time lying in the sunlight,\nit's a sign that the bud will bloom into a\nlarge flower soon.",
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.grey,
+                                      ))
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ],
-                    ))),
-              ],
-            ),
-             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  margin: EdgeInsets.only(top: 20),
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    color: Colors.blue,
-                  ),
-                  child: Image.network(
-                    'https://www.pngall.com/wp-content/uploads/13/Pokemon-Logo-PNG-Pic.png',
-                  ),
-                ),
-                Container(
-                    margin: EdgeInsets.only(top: 20, left: 20),
-                    alignment: Alignment.topLeft,
-                    child: RichText(
-                        text: TextSpan(
-                      text: 'Hello, ',
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: '${widget.name}',
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.blue),
-                        ),
-                      ],
-                    ))),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  margin: EdgeInsets.only(top: 20),
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    color: Colors.blue,
-                  ),
-                  child: Image.network(
-                    'https://www.pngall.com/wp-content/uploads/13/Pokemon-Logo-PNG-Pic.png',
-                  ),
-                ),
-                Container(
-                    margin: EdgeInsets.only(top: 20, left: 20),
-                    alignment: Alignment.topLeft,
-                    child: RichText(
-                        text: TextSpan(
-                      text: 'Hello, ',
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: '${widget.name}',
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.blue),
-                        ),
-                      ],
-                    ))),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  margin: EdgeInsets.only(top: 20),
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    color: Colors.blue,
-                  ),
-                  child: Image.network(
-                    'https://www.pngall.com/wp-content/uploads/13/Pokemon-Logo-PNG-Pic.png',
-                  ),
-                ),
-                Container(
-                    margin: EdgeInsets.only(top: 20, left: 20),
-                    alignment: Alignment.topLeft,
-                    child: RichText(
-                        text: TextSpan(
-                      text: 'Hello, ',
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: '${widget.name}',
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.blue),
-                        ),
-                      ],
-                    ))),
-              ],
-            ), */
-                  ))
+                    ), 
+                 
+                  )),
             ],
           ))
         ],
