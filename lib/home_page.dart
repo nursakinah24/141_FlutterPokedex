@@ -71,7 +71,8 @@ class _HomePageState extends State<HomePage> {
           Column(
             children: <Widget>[
               Container(
-                  padding: EdgeInsets.only(top: 10, left: 15, right: 20),
+                  padding:
+                      EdgeInsets.only(top: 10, left: 15, right: 20, bottom: 10),
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: 'Search Pokemon',
@@ -94,44 +95,98 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(top: 20, left: 30),
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    color: Colors.blue,
-                  ),
-                  child: Image.network(
-                    'https://www.pngall.com/wp-content/uploads/13/Pokemon-Logo-PNG-Pic.png',
-                  ),
-                ),
-                Container(
-                    margin: EdgeInsets.only(top: 20, left: 20),
-                    alignment: Alignment.topLeft,
-                    child: RichText(
-                        text: TextSpan(
-                      text: 'Hello, ',
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: '${widget.name}',
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.blue),
+              child: Column(
+            children: <Widget>[
+              SizedBox(
+                  height: 150,
+                  child: Card(
+                    elevation: 4,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(top: 20, left: 30),
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.green,
+                          ),
+                          child: Image.network(
+                            'https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png',
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 20, left: 20),
+                          alignment: Alignment.topLeft,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  const Text('#001',
+                                      style: TextStyle(color: Colors.grey)),
+                                  Container(width: 10),
+                                  Text('Bulbasaur',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold))
+                                ],
+                              ),
+                              SizedBox.fromSize(),
+                              Row(
+                                children: [
+                                  Container(
+                                      width: 50, // set width to 200 pixels
+                                      height: 20,
+                                      decoration: BoxDecoration(
+                                          color: Colors.green,
+                                          borderRadius:
+                                              BorderRadius.circular(5)),
+                                      child: Align(
+                                        child: const Text('Grass',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold)),
+                                      ) // set height to 100 pixels
+                                      ),
+                                  Container(width: 5),
+                                  Container(
+                                      margin: EdgeInsets.only(left: 5),
+                                      alignment: Alignment.topLeft,
+                                      width: 50, // set width to 200 pixels
+                                      height: 20,
+                                      decoration: BoxDecoration(
+                                          color: Colors.purple,
+                                          borderRadius:
+                                              BorderRadius.circular(5)),
+                                      child: Align(
+                                        child: const Text('Poison',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold)),
+                                      )),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  const Text(
+                                      "Bulbasaur can be seen napping in bright \nsunlight. There is a seed on its back. \nBy soaking up the sun's rays, the seed\ngrows progressively larger.",
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.grey,
+                                      ))
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ],
-                    ))),
-              ],
-            ),
+                    ), /* 
              Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -279,10 +334,11 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ))),
               ],
-            ),
-              ],
-            )
-      )],
+            ), */
+                  ))
+            ],
+          ))
+        ],
       ),
     );
   }
