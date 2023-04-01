@@ -71,27 +71,218 @@ class _HomePageState extends State<HomePage> {
           Column(
             children: <Widget>[
               Container(
-                padding: EdgeInsets.only(top: 10, left: 15, right: 20),
+                  padding: EdgeInsets.only(top: 10, left: 15, right: 20),
                   child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Search Pokemon',
-                  hintStyle: TextStyle(color: Colors.grey),
-                  contentPadding: EdgeInsets.all(15.0),
-                  filled: true,
-                  fillColor: Colors.grey.shade300,
-                  prefixIcon: Icon(Icons.search),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: BorderSide.none),
-                ),
-                style: TextStyle(color: Colors.white),
-                onChanged: (value) {
-                  setState(() {
-                    searchText = value;
-                  });
-                },
-              ))
+                    decoration: InputDecoration(
+                      hintText: 'Search Pokemon',
+                      hintStyle: TextStyle(color: Colors.grey),
+                      contentPadding: EdgeInsets.all(15.0),
+                      filled: true,
+                      fillColor: Colors.grey.shade300,
+                      prefixIcon: Icon(Icons.search),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide.none),
+                    ),
+                    style: TextStyle(color: Colors.black),
+                    onChanged: (value) {
+                      setState(() {
+                        searchText = value;
+                      });
+                    },
+                  ))
             ],
-          )
-        ],
+          ),
+          SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 20, left: 30),
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    color: Colors.blue,
+                  ),
+                  child: Image.network(
+                    'https://www.pngall.com/wp-content/uploads/13/Pokemon-Logo-PNG-Pic.png',
+                  ),
+                ),
+                Container(
+                    margin: EdgeInsets.only(top: 20, left: 20),
+                    alignment: Alignment.topLeft,
+                    child: RichText(
+                        text: TextSpan(
+                      text: 'Hello, ',
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: '${widget.name}',
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue),
+                        ),
+                      ],
+                    ))),
+              ],
+            ),
+             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    color: Colors.blue,
+                  ),
+                  child: Image.network(
+                    'https://www.pngall.com/wp-content/uploads/13/Pokemon-Logo-PNG-Pic.png',
+                  ),
+                ),
+                Container(
+                    margin: EdgeInsets.only(top: 20, left: 20),
+                    alignment: Alignment.topLeft,
+                    child: RichText(
+                        text: TextSpan(
+                      text: 'Hello, ',
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: '${widget.name}',
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue),
+                        ),
+                      ],
+                    ))),
+              ],
+            ),
+             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    color: Colors.blue,
+                  ),
+                  child: Image.network(
+                    'https://www.pngall.com/wp-content/uploads/13/Pokemon-Logo-PNG-Pic.png',
+                  ),
+                ),
+                Container(
+                    margin: EdgeInsets.only(top: 20, left: 20),
+                    alignment: Alignment.topLeft,
+                    child: RichText(
+                        text: TextSpan(
+                      text: 'Hello, ',
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: '${widget.name}',
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue),
+                        ),
+                      ],
+                    ))),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    color: Colors.blue,
+                  ),
+                  child: Image.network(
+                    'https://www.pngall.com/wp-content/uploads/13/Pokemon-Logo-PNG-Pic.png',
+                  ),
+                ),
+                Container(
+                    margin: EdgeInsets.only(top: 20, left: 20),
+                    alignment: Alignment.topLeft,
+                    child: RichText(
+                        text: TextSpan(
+                      text: 'Hello, ',
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: '${widget.name}',
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue),
+                        ),
+                      ],
+                    ))),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 20),
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    color: Colors.blue,
+                  ),
+                  child: Image.network(
+                    'https://www.pngall.com/wp-content/uploads/13/Pokemon-Logo-PNG-Pic.png',
+                  ),
+                ),
+                Container(
+                    margin: EdgeInsets.only(top: 20, left: 20),
+                    alignment: Alignment.topLeft,
+                    child: RichText(
+                        text: TextSpan(
+                      text: 'Hello, ',
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: '${widget.name}',
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue),
+                        ),
+                      ],
+                    ))),
+              ],
+            ),
+              ],
+            )
+      )],
       ),
     );
   }
