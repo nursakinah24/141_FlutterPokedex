@@ -98,7 +98,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     if (value == null || value.isEmpty) {
                       return 'Nama Tidak Boleh Kosong';
                     }
-                    if (!value!.contains(value)) {
+                    if (!value.contains(value)) {
                       return 'Please enter a valid name!';
                     }
                     return null;
@@ -175,6 +175,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your password';
+                    } else if (value.length < 6) {
+                              return 'Password must be at least 6 characters';
                     }
                     return null;
                   },
@@ -224,6 +226,9 @@ class _RegisterPageState extends State<RegisterPage> {
                     if (value != password) {
                       return 'Passwords do not match';
                     }
+                    if (value.length < 6) {
+                              return 'Password must be at least 6 characters';
+                    }
                     return null;
                   },
                   onSaved: (value) {
@@ -241,9 +246,9 @@ class _RegisterPageState extends State<RegisterPage> {
                           borderRadius: BorderRadius.circular(50)),
                       //padding: EdgeInsets.all(24),
                     ),
-                    onPressed: () {
+                    onPressed: () async {
                       if (_formKey.currentState!.validate()) {
-                        _formKey.currentState!.save();
+                       // _formKey.currentState!.save();
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -252,7 +257,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             ),
                           ),
                         );
-                        setState(() {});
+                        //setState(() {});
                       }
                     },
                     child: const Text(

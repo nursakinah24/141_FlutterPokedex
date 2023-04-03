@@ -88,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                             if (value == null || value.isEmpty) {
                               return 'Nama Tidak Boleh Kosong';
                             }
-                            if (!value!.contains(value)) {
+                            if (!value.contains(value)) {
                               return 'Please enter a valid name!';
                             }
                             return null;

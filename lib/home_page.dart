@@ -17,9 +17,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    //  resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: false,
       body: SingleChildScrollView( child: Column(
-       // mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Row(mainAxisAlignment: MainAxisAlignment.start, children: [
             Container(
@@ -467,98 +467,6 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),        
                   )),
-            /*                         SizedBox(
-                  height: 170,
-                  child: Card(
-                    elevation: 4,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(top: 20, left: 30),
-                          width: 100,
-                          height: 100,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.rectangle,
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.green,
-                          ),
-                          child: Image.network(
-                            'https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png',
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(top: 20, left: 20),
-                          alignment: Alignment.topLeft,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  const Text('#003',
-                                      style: TextStyle(color: Colors.grey)),
-                                  Container(width: 10),
-                                  Text('Venusaur',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.bold))
-                                ],
-                              ),
-                              SizedBox.fromSize(size: Size(5, 5),),
-                              Row(
-                                children: [
-                                  Container(
-                                      width: 50, // set width to 200 pixels
-                                      height: 20,
-                                      decoration: BoxDecoration(
-                                          color: Colors.green,
-                                          borderRadius:
-                                              BorderRadius.circular(5)),
-                                      child: Align(
-                                        child: const Text('Grass',
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold)),
-                                      ) // set height to 100 pixels
-                                      ),
-                                  Container(width: 5),
-                                  Container(
-                                      margin: EdgeInsets.only(left: 5),
-                                      alignment: Alignment.topLeft,
-                                      width: 50, // set width to 200 pixels
-                                      height: 20,
-                                      decoration: BoxDecoration(
-                                          color: Colors.purple,
-                                          borderRadius:
-                                              BorderRadius.circular(5)),
-                                      child: Align(
-                                        child: const Text('Poison',
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold)),
-                                      )),
-                                ],
-                              ),
-                              SizedBox.fromSize(size: Size(5, 5),),
-                              Row(
-                                children: [
-                                  const Text(
-                                      "There is a large flower on Venusaur's\nback. The flower is saidto take on vivid\ncolors if it gets plenty of nutrition and\nsunlight. The flower's aroma soothes\nthe emotions of people.",
-                                      style: TextStyle(
-                                        fontSize: 11,
-                                        color: Colors.grey,
-                                      ))
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),        
-                  )), */
             ],
           ))
         ],
